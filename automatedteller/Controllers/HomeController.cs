@@ -26,5 +26,19 @@ namespace automatedteller.Controllers
 
             return View();
         }
+        public ActionResult Foo()
+        {
+            return View("About");
+        }
+
+        public ActionResult Serial(string lettercase)
+        {
+            var serial = "ASPNETMVC5ATM1";
+
+            if (lettercase == "lower")            {
+                return Content(serial.ToLower());
+            }
+            return Content(serial);
+        }
     }
 }
